@@ -1,6 +1,6 @@
 async function fetchSettings() {
     try {
-        const response = await fetch("https://raw.githubusercontent.com/boiraspy/gmod-loading-screen/main/loading_screen_settings.json");
+        const response = await fetch(`https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/gmod-loading-screen/main/loading_screen_settings.json?timestamp=${new Date().getTime()}`);
         const data = await response.json();
 
         document.getElementById("background").style.backgroundImage = `url(${data.imgURL})`;
@@ -14,3 +14,4 @@ async function fetchSettings() {
 // Auto-refresh every 10 seconds
 setInterval(fetchSettings, 10000);
 fetchSettings();
+
